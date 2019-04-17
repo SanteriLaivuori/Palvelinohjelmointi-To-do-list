@@ -29,7 +29,7 @@ public class JpaRepositoryTest {
     
     @Autowired
     private UserRepository userRepository;
-
+    // Tässä testissä testataan tehtävän luontia Type-"kategoriaan"
     @Test
 	public void createTypeAndTask(){
 		Type Uusi = new Type("Test");
@@ -41,7 +41,7 @@ public class JpaRepositoryTest {
 		assertThat(task.getId()).isNotNull();
 		assertThat(task.getSubject()).isEqualTo("Test");
 	}
-    
+    // Tässä testissä testataan tehtävän poistamista
     @Test
 	public void deleteAndFindTask(){
         Type Uusi = new Type("Test");
@@ -50,7 +50,7 @@ public class JpaRepositoryTest {
         Task task = new Task("Test", "Test", Uusi);
         taskRepository.save(task);
         List<Task> tasks = taskRepository.findByid((long) 0);
-        taskRepository.delete(tasks.get(1));
+        taskRepository.delete(tasks.get(0));
 
         List<Task> tasktest = taskRepository.findByid((long) 0);
 

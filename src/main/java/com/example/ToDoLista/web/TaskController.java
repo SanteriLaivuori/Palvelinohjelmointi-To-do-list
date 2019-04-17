@@ -30,7 +30,7 @@ public class TaskController {
 	// Käyttäjän luonti-sivulle siirtyminen "localhost:8080"-osoitteesta
 	@GetMapping("/")
 	public String index() {
-		return "redirect:signup";
+		return "redirect:tasklist";
 	}
 	// Kirjautumis-sivulle siirtyminen
 	@RequestMapping(value = "/login")
